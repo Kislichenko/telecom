@@ -152,35 +152,103 @@ hold off;\\
 \end{figure}
 
 \newpage
-\subsection{Работаем в Simulink}
-\label{sec:workSim}
+\textbf{Создадим прямоугольный импульс:\\\\}
+duty=20;\\
+A=1;\\
+
+y=A*square(2*t,duty);\\
+
+figure;\\
+hold on;\\
+axis([0 100 -inf inf])\\
+axis square\\
+grid on\\
+plot(y);\\
+hold off;\\
+
+figure;\\
+hold on;\\
+axis square\\
+grid on\\
+plot(abs(fft(y,512)));\\
+hold off;\\
 
 %Рисунок 5
 \begin{figure}[h!]
-\center{\includegraphics[width=0.6\linewidth]{simulink_sin}}
+\center{\includegraphics[width=0.6\linewidth]{square1-2-20}}
+\caption{Прямоугольный сигнал с амлитудой 1, циклической частотой 2, duty=20.}
+\end{figure}
+\newpage
+
+%Рисунок 6
+\begin{figure}[h!]
+\center{\includegraphics[width=0.6\linewidth]{square1-2-20sp}}
+\caption{Спектр прямоугольного сигнала с амлитудой 1, циклической частотой 2, duty=20.}
+\end{figure}
+
+\textbf{Изменим параметры прямоугольного импульса:\\\\}
+duty=40;\\
+A=1.5;\\
+
+y=A*square(1*t,duty);\\
+
+figure;\\
+hold on;\\
+axis([0 100 -inf inf])\\
+axis square\\
+grid on\\
+plot(y);\\
+hold off;\\
+
+figure;\\
+hold on;\\
+axis square\\
+grid on\\
+plot(abs(fft(y,512)));\\
+hold off;\\
+
+%Рисунок 7
+\begin{figure}[h!]
+\center{\includegraphics[width=0.6\linewidth]{square3d2-1-40}}
+\caption{Прямоугольный сигнал с амлитудой 1.5, циклической частотой 1, duty=40}
+\end{figure}
+
+%Рисунок 8
+\begin{figure}[h!]
+\center{\includegraphics[width=0.6\linewidth]{square3d2-1-40sp}}
+\caption{Спектр прямоугольного сигнала с амлитудой 1.5, циклической частотой 1, duty=40}
+\end{figure}
+\newpage
+
+\subsection{Работаем в Simulink}
+\label{sec:workSim}
+
+%Рисунок 9
+\begin{figure}[h!]
+\center{\includegraphics[width=0.4\linewidth]{simulink_sin}}
 \caption{Cхема для синусоиды.}
 \end{figure}
 
-%Рисунок 6
+%Рисунок 10
 \begin{figure}[h!]
 \center{\includegraphics[width=\linewidth]{simulink1-0-200sin}}
 \caption{Сигнал в Simulink.}
 \end{figure}
 
 \newpage
-%Рисунок 7
+%Рисунок 11
 \begin{figure}[h!]
 \center{\includegraphics[width=\linewidth]{simulink1-0-200sin_sp}}
 \caption{Спектр синусоиды в Simulink.}
 \end{figure}
 
-%Рисунок 8
+%Рисунок 12
 \begin{figure}[h!]
 \center{\includegraphics[width=\linewidth]{square1-1600-800-0-00d1simulink}}
 \caption{Прямоугольный сигнал в Simulink.}
 \end{figure}
 
-%Рисунок 8
+%Рисунок 13
 \begin{figure}[h!]
 \center{\includegraphics[width=\linewidth]{square1-1600-800-0-00d1simulink_sp}}
 \caption{Спектр прямоугольного сигнала в Simulink.}
